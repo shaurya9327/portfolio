@@ -183,6 +183,22 @@ export const experiences = [
 
 export const projects = [
   {
+    name: "MyBuildGuide CI/CD Platform",
+    stack: ["GitLab CI", "Kubernetes", "Helm", "Docker", "PostgreSQL", "Traefik", "Longhorn"],
+    description:
+      "Sole owner of the end-to-end CI/CD platform for a 5-service stack (Flask backends, Expo/React frontend, admin, landing). Built a GitLab CI monorepo pipeline — 31 jobs across 4 stages with per-service change detection, umbrella Helm chart across dev/uat/prod on a self-managed Kubernetes cluster, atomic rollbacks, Alembic migration preflight, zero-downtime deploys. Live in production.",
+    metric: { value: "60–80%", label: "pipeline time cut per edit" },
+    link: "https://mybuildguide.com",
+  },
+  {
+    name: "NIFTY Options Algo Trading",
+    stack: ["Python", "Playwright", "SQLite (WAL)", "Cron", "Linux VM", "Upstox API"],
+    description:
+      "Autonomous data-capture + multi-strategy backtesting pipeline for Indian index options. Cron-driven daily loop: Playwright-automated OAuth/TOTP refresh → market-hours tick capture (~7.5k polls/day across 23 instruments) → post-market backtest — zero manual intervention. Includes a stdlib Black-Scholes engine, realistic Indian retail cost model (STT/slippage/brokerage/GST), and six A/B-comparable strategy variants.",
+    metric: { value: "99.97%", label: "pipeline uptime" },
+    link: "https://github.com/shaurya9327/nse",
+  },
+  {
     name: "Autonomous AIOps Gateway",
     stack: ["Moltbot", "Linux", "Telegram API", "Systemd"],
     description:

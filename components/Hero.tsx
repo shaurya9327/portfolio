@@ -34,6 +34,10 @@ export default function Hero() {
             <p className="text-fg mt-1">
               shaurya  tty1  still logged in   <span className="text-accent">● available</span>
             </p>
+            <p className="mt-3">$ grep phone ~/.contact</p>
+            <p className="text-fg mt-1">
+              phone=<a href={`tel:${profile.phone.replace(/\s+/g, "")}`} className="underline decoration-dotted hover:text-accent">{profile.phone}</a>
+            </p>
           </motion.div>
 
           <motion.h1
