@@ -5,31 +5,33 @@ import { skillGroups } from "@/lib/data";
 
 export default function Skills() {
   return (
-    <Section id="skills" title="Technical Skills" kicker="skills">
+    <Section id="skills" title="Stack" kicker="skills">
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {skillGroups.map((g, i) => (
           <motion.div
             key={g.title}
-            initial={{ opacity: 0, y: 14 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: i * 0.04 }}
-            className="gradient-border p-5"
+            transition={{ duration: 0.35, delay: i * 0.03 }}
+            className="bd bg-panel p-5 hover:bd-accent transition"
           >
-            <h3 className="text-sm font-mono text-accent mb-4">{g.title}</h3>
+            <h3 className="text-xs font-mono text-accent uppercase tracking-widest mb-3">
+              // {g.title}
+            </h3>
             <ul className="flex flex-wrap gap-2">
               {g.items.map((s) => {
                 const Icon = s.icon;
                 return (
                   <li
                     key={s.name}
-                    className="group inline-flex items-center gap-1.5 text-xs border border-border rounded px-2.5 py-1.5 text-muted hover:text-fg hover:border-accent/50 transition bg-bg/40"
+                    className="inline-flex items-center gap-1.5 text-xs bd px-2.5 py-1.5 text-fg font-mono bg-bg hover:border-accent transition"
                   >
                     {Icon ? (
                       <Icon
-                        className="shrink-0 transition-colors"
+                        className="shrink-0"
                         style={{ color: s.color }}
-                        size={14}
+                        size={13}
                         aria-hidden
                       />
                     ) : null}

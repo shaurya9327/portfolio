@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
+import { Bebas_Neue } from "next/font/google";
 import "./globals.css";
+
+const bebas = Bebas_Neue({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-display",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Shaurya Dandriyal — DevOps & Platform Engineer",
@@ -15,8 +23,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="font-sans antialiased">{children}</body>
+    <html lang="en" className={bebas.variable}>
+      <body className="font-sans antialiased bg-bg text-fg">{children}</body>
     </html>
   );
 }
