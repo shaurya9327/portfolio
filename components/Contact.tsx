@@ -6,7 +6,7 @@ import { profile } from "@/lib/data";
 export default function Contact() {
   return (
     <Section id="contact" title="Get in touch" kicker="contact">
-      <div className="bg-panel border border-border rounded-lg p-8 text-center">
+      <div className="gradient-border p-8 md:p-10 text-center">
         <p className="text-muted max-w-xl mx-auto">
           Open to DevOps, Platform, and SRE roles. The fastest way to reach me is email —
           I reply within a day.
@@ -36,10 +36,6 @@ export default function Contact() {
           </a>
         </div>
       </div>
-      <footer className="mt-12 text-center text-muted text-sm font-mono">
-        <span className="text-accent">$</span> exit 0 &nbsp;·&nbsp; © {new Date().getFullYear()}{" "}
-        {profile.name}
-      </footer>
     </Section>
   );
 }

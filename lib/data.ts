@@ -1,3 +1,37 @@
+import type { IconType } from "react-icons";
+import {
+  SiDocker,
+  SiKubernetes,
+  SiHelm,
+  SiGitlab,
+  SiJenkins,
+  SiGithubactions,
+  SiArgo,
+  SiApachemaven,
+  SiSonarqubecloud,
+  SiTerraform,
+  SiAnsible,
+  SiPrometheus,
+  SiGrafana,
+  SiElastic,
+  SiClickhouse,
+  SiPostgresql,
+  SiMysql,
+  SiRedis,
+  SiMongodb,
+  SiPython,
+  SiGnubash,
+  SiYaml,
+  SiGo,
+  SiTypescript,
+  SiNginx,
+  SiHashicorp,
+  SiLinux,
+  SiProxmox,
+} from "react-icons/si";
+import { FaAws } from "react-icons/fa6";
+import { FiCpu } from "react-icons/fi";
+
 export const profile = {
   name: "Shaurya Dandriyal",
   title: "DevOps & Platform Engineer",
@@ -11,16 +45,105 @@ export const profile = {
   resumeHref: "/resume.pdf",
 };
 
-export const skillGroups: { title: string; items: string[] }[] = [
-  { title: "Cloud", items: ["AWS", "EC2", "S3", "IAM", "VPC", "EKS", "CloudWatch", "Route 53", "ELB", "GCP"] },
-  { title: "Containers & Orchestration", items: ["Docker", "Kubernetes", "Helm", "Kustomize", "Proxmox VE"] },
-  { title: "CI/CD & GitOps", items: ["GitLab CI", "Jenkins", "GitHub Actions", "ArgoCD", "Maven", "SonarQube"] },
-  { title: "Infrastructure as Code", items: ["Terraform", "Ansible", "CloudFormation", "Packer"] },
-  { title: "Observability", items: ["Prometheus", "Grafana", "Loki", "ELK Stack", "CloudWatch", "Alertmanager"] },
-  { title: "Data Infra", items: ["ClickHouse", "Qdrant", "PostgreSQL", "MySQL", "Redis", "MongoDB"] },
-  { title: "Scripting & Programming", items: ["Python", "Bash", "YAML", "Groovy", "Go (basics)", "TypeScript"] },
-  { title: "Networking & Security", items: ["Nginx", "HAProxy", "TLS/SSL", "DNS", "Load Balancing", "IAM", "HashiCorp Vault"] },
-  { title: "AI & Productivity", items: ["Claude Code", "Prompt Engineering", "AIOps", "LLM tooling"] },
+type Skill = { name: string; icon?: IconType; color?: string };
+
+export const skillGroups: { title: string; items: Skill[] }[] = [
+  {
+    title: "Cloud",
+    items: [
+      { name: "AWS", icon: FaAws, color: "#FF9900" },
+      { name: "EC2" }, { name: "S3" }, { name: "EKS" },
+      { name: "VPC" }, { name: "IAM" }, { name: "CloudWatch" },
+    ],
+  },
+  {
+    title: "Containers & Orchestration",
+    items: [
+      { name: "Docker", icon: SiDocker, color: "#2496ED" },
+      { name: "Kubernetes", icon: SiKubernetes, color: "#326CE5" },
+      { name: "Helm", icon: SiHelm, color: "#0F1689" },
+      { name: "Kustomize" },
+      { name: "Proxmox", icon: SiProxmox, color: "#E57000" },
+    ],
+  },
+  {
+    title: "CI/CD & GitOps",
+    items: [
+      { name: "GitLab CI", icon: SiGitlab, color: "#FC6D26" },
+      { name: "Jenkins", icon: SiJenkins, color: "#D33833" },
+      { name: "GitHub Actions", icon: SiGithubactions, color: "#2088FF" },
+      { name: "ArgoCD", icon: SiArgo, color: "#EF7B4D" },
+      { name: "Maven", icon: SiApachemaven, color: "#C71A36" },
+      { name: "SonarQube", icon: SiSonarqubecloud, color: "#4E9BCD" },
+    ],
+  },
+  {
+    title: "Infrastructure as Code",
+    items: [
+      { name: "Terraform", icon: SiTerraform, color: "#7B42BC" },
+      { name: "Ansible", icon: SiAnsible, color: "#EE0000" },
+      { name: "CloudFormation" },
+      { name: "Packer" },
+    ],
+  },
+  {
+    title: "Observability",
+    items: [
+      { name: "Prometheus", icon: SiPrometheus, color: "#E6522C" },
+      { name: "Grafana", icon: SiGrafana, color: "#F46800" },
+      { name: "Loki" },
+      { name: "ELK Stack", icon: SiElastic, color: "#005571" },
+      { name: "Alertmanager" },
+    ],
+  },
+  {
+    title: "Data Infrastructure",
+    items: [
+      { name: "ClickHouse", icon: SiClickhouse, color: "#FFCC01" },
+      { name: "Qdrant" },
+      { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
+      { name: "MySQL", icon: SiMysql, color: "#4479A1" },
+      { name: "Redis", icon: SiRedis, color: "#DC382D" },
+      { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+    ],
+  },
+  {
+    title: "Scripting & Programming",
+    items: [
+      { name: "Python", icon: SiPython, color: "#3776AB" },
+      { name: "Bash", icon: SiGnubash, color: "#4EAA25" },
+      { name: "YAML", icon: SiYaml, color: "#CB171E" },
+      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+      { name: "Go", icon: SiGo, color: "#00ADD8" },
+    ],
+  },
+  {
+    title: "Networking & Security",
+    items: [
+      { name: "Nginx", icon: SiNginx, color: "#009639" },
+      { name: "HAProxy" },
+      { name: "TLS/SSL" },
+      { name: "Vault", icon: SiHashicorp, color: "#000000" },
+      { name: "DNS" }, { name: "Load Balancing" },
+    ],
+  },
+  {
+    title: "AI & Productivity",
+    items: [
+      { name: "Claude Code", icon: FiCpu, color: "#D97757" },
+      { name: "Prompt Engineering" },
+      { name: "AIOps" },
+      { name: "LLM Tooling" },
+    ],
+  },
+  {
+    title: "OS",
+    items: [
+      { name: "Linux", icon: SiLinux, color: "#FCC624" },
+      { name: "Ubuntu" }, { name: "Amazon Linux" },
+      { name: "Systemd" },
+    ],
+  },
 ];
 
 export const experiences = [
@@ -28,6 +151,7 @@ export const experiences = [
     role: "DevOps Platform Engineer",
     company: "Spizen Technologies",
     dates: "Feb 2026 — Present",
+    tag: "current",
     bullets: [
       "Owned end-to-end CI/CD setup in GitLab, managing pipelines, deployments, and release automation across multiple production services.",
       "Provisioned and operated core data infrastructure including ClickHouse and Qdrant, handling end-to-end setup, tuning, and day-2 operations.",
@@ -63,27 +187,28 @@ export const projects = [
     stack: ["Moltbot", "Linux", "Telegram API", "Systemd"],
     description:
       "Self-healing infrastructure assistant that automates Linux server administration and service recovery. Custom AI Skills monitor Nginx logs and execute automated remediation via secure Systemd integrations, reducing MTTR through real-time alerting and remote shell execution via Telegram.",
-    highlights: ["Self-healing", "MTTR reduction", "AI-driven remediation"],
+    metric: { value: "↓ MTTR", label: "real-time auto-remediation" },
   },
   {
     name: "Medicure, InsureMe & FinanceMe",
-    stack: ["Kubernetes", "Terraform", "AWS", "Jenkins", "Docker", "Prometheus", "Grafana"],
+    stack: ["Kubernetes", "Terraform", "AWS", "Jenkins", "Prometheus", "Grafana"],
     description:
       "Provisioned highly available AWS EKS/EC2 clusters using Terraform for Infrastructure as Code management. Automated environment provisioning with Ansible and Jenkins pipelines. Implemented a distributed Jenkins Master-Agent architecture plus a full-stack Prometheus + Grafana monitoring solution.",
-    highlights: ["IaC", "Distributed CI", "Full-stack observability"],
+    metric: { value: "HA", label: "EKS + distributed CI" },
   },
   {
     name: "Zomato-Clone App",
     stack: ["SonarQube", "Jenkins", "Docker", "AWS"],
     description:
       "Integrated SonarQube into Jenkins pipelines to enforce 80%+ code coverage and security gates for containerized deployments, acting as an automated QA gatekeeper on every merge.",
-    highlights: ["Quality gates", "Security scanning", "80%+ coverage"],
+    metric: { value: "80%+", label: "enforced coverage" },
   },
   {
     name: "NoLimitNodes",
     stack: ["Kubernetes", "GitLab CI", "Proxmox", "Grafana"],
-    description: "Live production deployment contribution at Spizen Technologies — nolimitnodes.com.",
-    highlights: ["Live", "Production"],
+    description:
+      "Production deployment contribution at Spizen Technologies. Live at nolimitnodes.com — runs on infrastructure I provisioned and operate.",
+    metric: { value: "LIVE", label: "nolimitnodes.com" },
     link: "https://nolimitnodes.com",
   },
 ];
