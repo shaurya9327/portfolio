@@ -48,14 +48,13 @@ export default function Projects() {
               </div>
             )}
 
-            <p className="mt-4 text-muted text-sm font-mono leading-relaxed">{p.description}</p>
+            <p className="mt-4 text-muted text-[15px] font-mono leading-relaxed">
+              {p.description}
+            </p>
 
             <div className="mt-5 flex flex-wrap gap-2">
               {p.stack.map((s) => (
-                <span
-                  key={s}
-                  className="text-[10px] bd px-2 py-1 text-fg font-mono"
-                >
+                <span key={s} className="text-xs bd px-2.5 py-1 text-fg font-mono">
                   {s}
                 </span>
               ))}

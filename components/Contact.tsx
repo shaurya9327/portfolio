@@ -1,67 +1,61 @@
 "use client";
+import { motion } from "framer-motion";
 import { FiGithub, FiLinkedin, FiMail, FiPhone } from "react-icons/fi";
 import Section from "./Section";
 import { profile } from "@/lib/data";
-import { HAPPY_WOJAK } from "./Memes";
+
+const cards = [
+  { icon: FiMail, label: "Email", value: profile.email, href: `mailto:${profile.email}`, primary: true },
+  { icon: FiPhone, label: "Call", value: profile.phone, href: `tel:${profile.phone.replace(/\s+/g, "")}` },
+  { icon: FiGithub, label: "GitHub", value: "shaurya9327", href: profile.github },
+  { icon: FiLinkedin, label: "LinkedIn", value: "shaurya-dandriyal", href: profile.linkedin },
+];
 
 export default function Contact() {
-  const telHref = `tel:${profile.phone.replace(/\s+/g, "")}`;
   return (
     <Section id="contact" title="Contact" kicker="contact">
-      <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
-        {/* /etc/mood terminal panel — matches the Hero /etc/motd aesthetic */}
-        <div className="bd bg-panel p-5 font-mono text-xs md:text-sm">
-          <div className="flex items-center gap-1.5 mb-4 text-muted">
-            <span className="w-2.5 h-2.5 rounded-full bg-accent" />
-            <span className="w-2.5 h-2.5 rounded-full bg-muted/40" />
-            <span className="w-2.5 h-2.5 rounded-full bg-muted/40" />
-            <span className="ml-2">/etc/mood</span>
-          </div>
-          <pre className="ascii text-accent leading-tight">{HAPPY_WOJAK}</pre>
-          <div className="mt-4 text-muted text-[11px] leading-relaxed">
-            <p><span className="text-accent">mood</span>    : <span className="text-fg">feels_shippable</span></p>
-            <p><span className="text-accent">status</span>  : <span className="text-fg">open_to_work</span></p>
-            <p><span className="text-accent">reply</span>   : &lt; 24h</p>
-          </div>
-        </div>
+      <div className="bd bg-panel p-6 md:p-10 font-mono">
+        <p className="text-sm text-muted mb-3">$ ssh shaurya@inbox</p>
+        <p className="text-fg text-lg md:text-xl leading-relaxed max-w-2xl">
+          Open to <span className="text-accent">DevOps</span>,{" "}
+          <span className="text-accent">Platform</span>, and{" "}
+          <span className="text-accent">SRE</span> roles. I reply within 24 hours. Email or
+          call — no recruiter spam please.
+        </p>
 
-        {/* Contact actions */}
-        <div className="bd bg-panel p-6 md:p-10 font-mono">
-          <p className="text-xs text-muted mb-2">$ ssh shaurya@inbox</p>
-          <p className="text-fg text-sm leading-relaxed">
-            Open to DevOps, Platform, and SRE roles. The fastest way to reach me is email —
-            I reply within a day. Prefer to talk?  Just dial.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3 text-sm">
-            <a
-              href={`mailto:${profile.email}`}
-              className="inline-flex items-center gap-2 bg-accent text-bg px-5 py-2.5 hover:bg-fg transition"
-            >
-              <FiMail /> {profile.email}
-            </a>
-            <a
-              href={telHref}
-              className="inline-flex items-center gap-2 bd-accent text-accent hover:bg-accent hover:text-bg px-5 py-2.5 transition"
-            >
-              <FiPhone /> {profile.phone}
-            </a>
-            <a
-              href={profile.github}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 bd hover:bd-accent hover:text-accent text-fg px-5 py-2.5 transition"
-            >
-              <FiGithub /> github
-            </a>
-            <a
-              href={profile.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 bd hover:bd-accent hover:text-accent text-fg px-5 py-2.5 transition"
-            >
-              <FiLinkedin /> linkedin
-            </a>
-          </div>
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          {cards.map((c, i) => {
+            const Icon = c.icon;
+            return (
+              <motion.a
+                key={c.label}
+                href={c.href}
+                target={c.href.startsWith("http") ? "_blank" : undefined}
+                rel="noreferrer"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35, delay: i * 0.06 }}
+                className={`group bd p-5 flex flex-col gap-2 hover:bd-accent transition ${
+                  c.primary ? "bg-accent text-bg" : "bg-bg text-fg"
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <Icon size={20} className={c.primary ? "text-bg" : "text-accent"} />
+                  <span className="text-[11px] uppercase tracking-widest opacity-70">
+                    {c.label}
+                  </span>
+                </div>
+                <span
+                  className={`text-sm md:text-base font-medium break-all ${
+                    c.primary ? "text-bg" : "text-fg"
+                  }`}
+                >
+                  {c.value}
+                </span>
+              </motion.a>
+            );
+          })}
         </div>
       </div>
     </Section>

@@ -24,7 +24,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4 }}
-            className="font-mono text-xs text-muted mb-4"
+            className="font-mono text-sm text-muted mb-4"
           >
             <p>$ uname -a</p>
             <p className="text-fg mt-1">
@@ -76,7 +76,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-6 max-w-2xl text-muted leading-relaxed font-mono text-sm"
+            className="mt-6 max-w-2xl text-muted leading-relaxed font-mono text-base md:text-lg"
           >
             I build and operate cloud-native infrastructure on AWS and Kubernetes. I ship
             end-to-end CI/CD, run ClickHouse + Qdrant at production scale, and execute

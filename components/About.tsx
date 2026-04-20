@@ -6,8 +6,8 @@ export default function About() {
   return (
     <Section id="about" title="About" kicker="about">
       <div className="grid md:grid-cols-3 gap-6">
-        <div className="md:col-span-2 bd bg-panel p-6 font-mono text-sm">
-          <p className="text-muted text-xs mb-3">$ cat ./bio.txt</p>
+        <div className="md:col-span-2 bd bg-panel p-6 md:p-8 font-mono text-base">
+          <p className="text-muted text-sm mb-3">$ cat ./bio.txt</p>
           <p className="text-fg leading-relaxed">{profile.summary}</p>
           <p className="mt-4 text-fg leading-relaxed">
             I care about the whole lifecycle — build, deploy, observe, recover. I lean
@@ -16,7 +16,7 @@ export default function About() {
             hero.
           </p>
         </div>
-        <div className="bd bg-panel p-6 font-mono text-xs">
+        <div className="bd bg-panel p-6 md:p-8 font-mono text-sm">
           <p className="text-muted mb-3">$ whoami --verbose</p>
           <dl className="space-y-1.5">
             <div className="flex gap-2">

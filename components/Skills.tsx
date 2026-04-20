@@ -16,7 +16,7 @@ export default function Skills() {
             transition={{ duration: 0.35, delay: i * 0.03 }}
             className="bd bg-panel p-5 hover:bd-accent transition"
           >
-            <h3 className="text-xs font-mono text-accent uppercase tracking-widest mb-3">
+            <h3 className="text-sm font-mono text-accent uppercase tracking-widest mb-3">
               // {g.title}
             </h3>
             <ul className="flex flex-wrap gap-2">
@@ -25,7 +25,7 @@ export default function Skills() {
                 return (
                   <li
                     key={s.name}
-                    className="inline-flex items-center gap-1.5 text-xs bd px-2.5 py-1.5 text-fg font-mono bg-bg hover:border-accent transition"
+                    className="inline-flex items-center gap-1.5 text-sm bd px-3 py-1.5 text-fg font-mono bg-bg hover:border-accent transition"
                   >
                     {Icon ? (
                       <Icon

@@ -22,10 +22,10 @@ export default function Section({
         transition={{ duration: 0.5 }}
         className="mb-10"
       >
-        <p className="font-mono text-xs text-muted">
+        <p className="font-mono text-sm text-muted">
           <span className="text-accent">$</span> cat ~/{kicker ?? id}.md
         </p>
-        <h2 className="display font-display mt-1 text-4xl md:text-5xl uppercase tracking-wide">
+        <h2 className="display font-display mt-1 text-5xl md:text-6xl uppercase tracking-wide">
           {title}
         </h2>
         <div className="mt-3 h-px w-20 bg-accent" />

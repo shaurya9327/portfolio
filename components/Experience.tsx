@@ -33,9 +33,9 @@ export default function Experience() {
                 <p className="font-mono text-xs text-accent">{e.dates}</p>
               </div>
             </div>
-            <ul className="mt-4 space-y-2 font-mono text-sm">
+            <ul className="mt-4 space-y-2 font-mono text-[15px] leading-relaxed">
               {e.bullets.map((b, j) => (
-                <li key={j} className="text-muted leading-relaxed flex gap-2">
+                <li key={j} className="text-muted flex gap-2">
                   <span className="text-accent mt-0.5">&gt;</span>
                   <span>{b}</span>
                 </li>
