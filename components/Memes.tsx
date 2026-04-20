@@ -1,4 +1,4 @@
-/* ASCII / dot-matrix art. */
+/* ASCII line-art, rendered in <pre> with a monospace font. */
 
 export const TUX_ASCII = String.raw`        .--"""--.
        /_       _\
@@ -14,29 +14,17 @@ export const TUX_ASCII = String.raw`        .--"""--.
        '.____.'
 `;
 
-/* Happy Wojak, rendered as a dot-matrix bitmap.
-   Rows are drawn with block-shade characters (░▒▓█) so it
-   prints cleanly in a monospace font. */
-export const HAPPY_WOJAK = [
-  "          ░▒▓▓▓▓▓▓▓▒░          ",
-  "       ▒▓████████████▓▒        ",
-  "     ▓██████████████████▓      ",
-  "    ████████████████████████   ",
-  "   ██████████████████████████  ",
-  "  ████████████████████████████ ",
-  "  ████████████████████████████ ",
-  " ██████████████████████████████",
-  " ██████████████████████████████",
-  " █████    ████████    █████████",
-  " █████    ████████    █████████",
-  " █████    ████████    █████████",
-  " ██████████████████████████████",
-  " ██████████████████████████████",
-  "  ██████                ██████ ",
-  "   █████              █████    ",
-  "    ██████          ██████     ",
-  "      ████████████████████     ",
-  "        ████████████████       ",
-  "           ██████████          ",
-  "             ██████            ",
-].join("\n");
+/* Happy Wojak — drawn with the same ASCII character set as Tux:
+   . , ' " _ - / \ | ( )  so the aesthetic matches the Hero /etc/motd. */
+export const HAPPY_WOJAK = String.raw`         .--"""--.
+       /'         '\
+      /   ^     ^   \
+     |               |
+     |               |
+     |    _______    |
+     |   /       \   |
+     |   \_______/   |
+      \             /
+       \           /
+        '.-------.'
+`;
