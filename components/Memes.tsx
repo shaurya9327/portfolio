@@ -1,4 +1,4 @@
-/* ASCII line-art, rendered in <pre> with a monospace font. */
+/* ASCII line-art / dot-matrix, rendered in <pre> with a monospace font. */
 
 export const TUX_ASCII = String.raw`        .--"""--.
        /_       _\
@@ -14,17 +14,33 @@ export const TUX_ASCII = String.raw`        .--"""--.
        '.____.'
 `;
 
-/* Happy Wojak — drawn with the same ASCII character set as Tux:
-   . , ' " _ - / \ | ( )  so the aesthetic matches the Hero /etc/motd. */
-export const HAPPY_WOJAK = String.raw`         .--"""--.
-       /'         '\
-      /   ^     ^   \
-     |               |
-     |               |
-     |    _______    |
-     |   /       \   |
-     |   \_______/   |
-      \             /
-       \           /
-        '.-------.'
-`;
+/* Happy Wojak — generated from the real imgflip template image,
+   raster-to-ASCII via Gaussian blur + thresholded shade ramp.
+   Renders cleanly in any monospace font. */
+export const HAPPY_WOJAK = [
+  "                        ░░░        ░░░                  ",
+  "                   ░░                  ░░░              ",
+  "                ░░                         ░▓           ",
+  "              ▓░                             ▓          ",
+  "            ▓░                                █         ",
+  "           █                                   █        ",
+  "          ░▓                                   █        ",
+  "          █                                     █       ",
+  "         ▓░                                     █       ",
+  "         █                                      ▓       ",
+  "        ▓░                                      ▓       ",
+  "         ▓  ███ ░         ▓████░█               █       ",
+  "         █  ███░▓░        ▓███▓                ▓░       ",
+  "        █                                      █        ",
+  "       ░▓         █                    █      █         ",
+  "        █       ▓░                     █    ░▓          ",
+  "        ▓▓      █       ░█   ░        ▓░    █           ",
+  "         ▓▓      ▓   ░  ░░  ██▓       ▓    ░░           ",
+  "          ░▓    ▓██▓    ░▓████      ░▓     ░░           ",
+  "            ▓    ████▓███████▓    ░░       ░▓           ",
+  "            █     ▓██ ████▓█░   ▓░    ░     █           ",
+  "             ░▓     ░▓  ░    ░▓             ░▓          ",
+  "               ▓░          ░░                █░         ",
+  "                    █░   ░             ░▓     ▓░        ",
+  "                   ░▓                    ▓░     █▓      ",
+].join("\n");
