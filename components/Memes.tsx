@@ -14,30 +14,24 @@ export const TUX_ASCII = String.raw`        .--"""--.
        '.____.'
 `;
 
-export const TIGER_ASCII = String.raw`        ,_     _,
-        /\\___//\
-       (    Y    )
-       / =     = \
-      | ()  ω  () |
-      |    \_/    |
-       \  '====' /
-        \   vv   /
-         '------'
-        | || || |
-        | || || |
+export const FOX_ASCII = String.raw`         /\     /\
+        /  \___/  \
+       |   o   o   |
+       |    /\     |
+        \   ww    /
+         \  \/   /
+          \-----/
+          |  V  |
+           \___/
 `;
 
-export const WOLF_ASCII = String.raw`          /\___/\
-         /       \
-        / ▼     ▼ \
-       |     >     |
-        \   ___   /
-         \  \_/  /
-          \-----/
-          /     \
-         /       \
-        /_________\
-          | | |
+export const SMILEY_ASCII = String.raw`         .-----.
+       /         \
+      |   o   o   |
+      |           |
+      |   \___/   |
+       \         /
+         '-----'
 `;
 
 /* Happy Wojak — clean SVG outline drawn to resemble the imgflip meme. */
