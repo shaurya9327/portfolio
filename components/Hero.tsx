@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FiGithub, FiLinkedin, FiMail, FiDownload, FiMapPin } from "react-icons/fi";
 import { profile } from "@/lib/data";
-import { TUX_ASCII } from "./Memes";
+import MotdFlipboard from "./MotdFlipboard";
 
 const roles = ["DEVOPS ENGINEER", "PLATFORM ENGINEER", "SRE", "CLOUD ENGINEER"];
 
@@ -136,29 +136,8 @@ export default function Hero() {
           </motion.p>
         </div>
 
-        {/* tux + /etc/motd */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="md:col-span-2 bd p-5 font-mono text-xs md:text-sm bg-panel relative"
-        >
-          <div className="flex items-center gap-1.5 mb-4 text-muted">
-            <span className="w-2.5 h-2.5 rounded-full bg-accent" />
-            <span className="w-2.5 h-2.5 rounded-full bg-muted/40" />
-            <span className="w-2.5 h-2.5 rounded-full bg-muted/40" />
-            <span className="ml-2">/etc/motd</span>
-          </div>
-          <pre className="ascii text-accent leading-tight">{TUX_ASCII}</pre>
-          <div className="mt-4 text-muted text-[11px] leading-relaxed">
-            <p><span className="text-accent">hostname</span> : spizen-prod-01</p>
-            <p><span className="text-accent">kernel</span>   : 6.8.12-amd64</p>
-            <p><span className="text-accent">cloud</span>    : aws · hetzner · proxmox</p>
-            <p><span className="text-accent">data</span>     : clickhouse · qdrant · kafka</p>
-            <p><span className="text-accent">monitor</span>  : grafana · loki · tempo</p>
-            <p><span className="text-accent">status</span>   : <span className="text-fg">shipping</span></p>
-          </div>
-        </motion.div>
+        {/* flipping motd panel: penguin → tiger → wolf */}
+        <MotdFlipboard />
       </div>
     </section>
   );
