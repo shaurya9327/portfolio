@@ -5,25 +5,29 @@ import { useEffect, useState } from "react";
 type Face = { value: string; label: string };
 
 const tiles: Face[][] = [
+  // CI/CD pipelines I've shipped
   [
     { value: "5×", label: "build-time speedup" },
-    { value: "10m → 2m", label: "single-service build" },
-    { value: "BuildKit", label: "registry-mode cache" },
+    { value: "31", label: "gitlab pipeline jobs" },
+    { value: "4-stage", label: "detect · build · validate · deploy" },
   ],
+  // Kubernetes workloads I run
   [
-    { value: "12.8K", label: "redis ops/sec" },
-    { value: "KVRocks", label: "backing store" },
-    { value: "M + R/R", label: "redis topology" },
+    { value: "119+", label: "deployments managed" },
+    { value: "13", label: "statefulsets in prod" },
+    { value: "3 envs", label: "dev · uat · prod" },
   ],
+  // Platform engineering deliveries
   [
-    { value: "119", label: "deployments migrated" },
-    { value: "13", label: "statefulsets migrated" },
-    { value: "F → Cilium", label: "cni migration" },
+    { value: "5", label: "microservices shipped · MBG" },
+    { value: "3 sites", label: "propulse property delivery" },
+    { value: "Helm", label: "umbrella charts per env" },
   ],
+  // Reliability outcomes
   [
     { value: "0", label: "downtime migrations" },
-    { value: "99.97%", label: "pipeline uptime" },
     { value: "60–80%", label: "pipeline time cut" },
+    { value: "Atomic", label: "helm rollbacks" },
   ],
 ];
 

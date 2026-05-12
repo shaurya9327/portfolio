@@ -80,9 +80,10 @@ export default function Hero() {
           >
             I build and operate cloud-native infrastructure on{" "}
             <span className="text-fg">AWS</span>, <span className="text-fg">Hetzner</span>,
-            and <span className="text-fg">Kubernetes</span>. I ship end-to-end CI/CD, run
-            ClickHouse, Qdrant, and Kafka at production scale, and just executed a
-            zero-downtime Flannel → Cilium CNI migration. Currently at{" "}
+            and <span className="text-fg">Kubernetes</span>. I own end-to-end CI/CD, run
+            ClickHouse, Qdrant, and Kafka at production scale, and ship the platform that
+            other teams deploy on — Helm umbrella charts, atomic rollbacks, and company-wide
+            Grafana observability across dev, UAT, and prod. Currently at{" "}
             <span className="text-fg">Spizen Technologies</span>.
           </motion.p>
 
