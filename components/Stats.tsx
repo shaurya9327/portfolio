@@ -2,10 +2,10 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "6", label: "production projects" },
+  { value: "5×", label: "build-time speedup" },
+  { value: "12.8K", label: "redis ops/sec" },
+  { value: "119", label: "deployments cni-migrated" },
   { value: "0", label: "downtime migrations" },
-  { value: "80%+", label: "enforced coverage" },
-  { value: "99.97%", label: "pipeline uptime" },
 ];
 
 export default function Stats() {

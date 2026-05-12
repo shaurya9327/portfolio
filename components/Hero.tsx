@@ -78,9 +78,11 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-6 max-w-2xl text-muted leading-relaxed font-mono text-base md:text-lg"
           >
-            I build and operate cloud-native infrastructure on AWS and Kubernetes. I ship
-            end-to-end CI/CD, run ClickHouse + Qdrant at production scale, and execute
-            zero-downtime cluster migrations. Currently at{" "}
+            I build and operate cloud-native infrastructure on{" "}
+            <span className="text-fg">AWS</span>, <span className="text-fg">Hetzner</span>,
+            and <span className="text-fg">Kubernetes</span>. I ship end-to-end CI/CD, run
+            ClickHouse, Qdrant, and Kafka at production scale, and just executed a
+            zero-downtime Flannel → Cilium CNI migration. Currently at{" "}
             <span className="text-fg">Spizen Technologies</span>.
           </motion.p>
 
@@ -149,8 +151,9 @@ export default function Hero() {
           <div className="mt-4 text-muted text-[11px] leading-relaxed">
             <p><span className="text-accent">hostname</span> : spizen-prod-01</p>
             <p><span className="text-accent">kernel</span>   : 6.8.12-amd64</p>
-            <p><span className="text-accent">uptime</span>   : up 847 days</p>
-            <p><span className="text-accent">services</span> : k8s · gitlab-ci · grafana</p>
+            <p><span className="text-accent">cni</span>      : cilium (eBPF)</p>
+            <p><span className="text-accent">cloud</span>    : aws · hetzner · proxmox</p>
+            <p><span className="text-accent">services</span> : k8s · kafka · clickhouse</p>
             <p><span className="text-accent">status</span>   : <span className="text-fg">shipping</span></p>
           </div>
         </motion.div>

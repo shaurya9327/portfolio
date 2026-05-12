@@ -28,6 +28,14 @@ import {
   SiHashicorp,
   SiLinux,
   SiProxmox,
+  SiApachekafka,
+  SiRancher,
+  SiContainerd,
+  SiCilium,
+  SiTrivy,
+  SiSonatype,
+  SiHetzner,
+  SiRust,
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa6";
 import { FiCpu } from "react-icons/fi";
@@ -41,7 +49,7 @@ export const profile = {
   github: "https://github.com/shaurya9327",
   linkedin: "https://linkedin.com/in/shaurya-dandriyal-12203b130",
   summary:
-    "DevOps / Platform Engineer with hands-on experience building and operating cloud-native infrastructure on AWS and Kubernetes. Skilled in end-to-end CI/CD with GitLab and Jenkins, Infrastructure as Code using Terraform and Ansible, and observability with Prometheus and Grafana. Proven track record provisioning ClickHouse and Qdrant, executing zero-downtime Kubernetes cluster migrations, and automating release pipelines for production services.",
+    "Results-driven DevOps and Platform Engineer with proven experience designing, automating, and operating production-grade cloud-native infrastructure on AWS, Hetzner Cloud, and Kubernetes. Specialized in end-to-end CI/CD on GitLab and Jenkins with isolated dev/test/prod environments, Infrastructure as Code with Terraform and Ansible, and full-stack observability with Prometheus, Grafana, Loki, and Tempo. Owns mission-critical data infrastructure (Apache Kafka, Redis, ClickHouse, Qdrant), executed a zero-downtime Kubernetes CNI migration, and ships resilient platforms that scale with the business.",
   resumeHref: "/resume.pdf",
 };
 
@@ -52,8 +60,9 @@ export const skillGroups: { title: string; items: Skill[] }[] = [
     title: "Cloud",
     items: [
       { name: "AWS", icon: FaAws, color: "#FF9900" },
+      { name: "Hetzner", icon: SiHetzner, color: "#D50C2D" },
       { name: "EC2" }, { name: "S3" }, { name: "EKS" },
-      { name: "VPC" }, { name: "IAM" }, { name: "CloudWatch" },
+      { name: "VPC" }, { name: "IAM" }, { name: "CloudWatch" }, { name: "Route 53" }, { name: "GCP" },
     ],
   },
   {
@@ -63,6 +72,9 @@ export const skillGroups: { title: string; items: Skill[] }[] = [
       { name: "Kubernetes", icon: SiKubernetes, color: "#326CE5" },
       { name: "Helm", icon: SiHelm, color: "#0F1689" },
       { name: "Kustomize" },
+      { name: "containerd", icon: SiContainerd, color: "#575757" },
+      { name: "Rancher", icon: SiRancher, color: "#0075A8" },
+      { name: "Fleet (GitOps)" },
       { name: "Proxmox", icon: SiProxmox, color: "#E57000" },
     ],
   },
@@ -71,6 +83,7 @@ export const skillGroups: { title: string; items: Skill[] }[] = [
     items: [
       { name: "GitLab CI", icon: SiGitlab, color: "#FC6D26" },
       { name: "Jenkins", icon: SiJenkins, color: "#D33833" },
+      { name: "Docker-in-Docker" },
       { name: "GitHub Actions", icon: SiGithubactions, color: "#2088FF" },
       { name: "ArgoCD", icon: SiArgo, color: "#EF7B4D" },
       { name: "Maven", icon: SiApachemaven, color: "#C71A36" },
@@ -83,7 +96,15 @@ export const skillGroups: { title: string; items: Skill[] }[] = [
       { name: "Terraform", icon: SiTerraform, color: "#7B42BC" },
       { name: "Ansible", icon: SiAnsible, color: "#EE0000" },
       { name: "CloudFormation" },
-      { name: "Packer" },
+    ],
+  },
+  {
+    title: "Streaming & Messaging",
+    items: [
+      { name: "Apache Kafka", icon: SiApachekafka, color: "#231F20" },
+      { name: "Kafka Consumer Groups" },
+      { name: "Kafka Connect" },
+      { name: "Pushgateway" },
     ],
   },
   {
@@ -92,8 +113,11 @@ export const skillGroups: { title: string; items: Skill[] }[] = [
       { name: "Prometheus", icon: SiPrometheus, color: "#E6522C" },
       { name: "Grafana", icon: SiGrafana, color: "#F46800" },
       { name: "Loki" },
-      { name: "ELK Stack", icon: SiElastic, color: "#005571" },
+      { name: "Tempo" },
       { name: "Alertmanager" },
+      { name: "Node Exporter" },
+      { name: "Process Exporter" },
+      { name: "ELK Stack", icon: SiElastic, color: "#005571" },
     ],
   },
   {
@@ -101,10 +125,37 @@ export const skillGroups: { title: string; items: Skill[] }[] = [
     items: [
       { name: "ClickHouse", icon: SiClickhouse, color: "#FFCC01" },
       { name: "Qdrant" },
+      { name: "Redis", icon: SiRedis, color: "#DC382D" },
+      { name: "KVRocks" },
       { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
       { name: "MySQL", icon: SiMysql, color: "#4479A1" },
-      { name: "Redis", icon: SiRedis, color: "#DC382D" },
       { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+      { name: "Alembic" },
+    ],
+  },
+  {
+    title: "Networking & Security",
+    items: [
+      { name: "Cilium (eBPF)", icon: SiCilium, color: "#F8C517" },
+      { name: "Flannel" },
+      { name: "Traefik" },
+      { name: "Nginx", icon: SiNginx, color: "#009639" },
+      { name: "HAProxy" },
+      { name: "cert-manager" },
+      { name: "Let's Encrypt" },
+      { name: "CoreDNS" },
+      { name: "TLS/SSL" },
+      { name: "Vault", icon: SiHashicorp, color: "#000000" },
+      { name: "NetworkPolicies" },
+    ],
+  },
+  {
+    title: "Storage",
+    items: [
+      { name: "Longhorn" },
+      { name: "local-path-provisioner" },
+      { name: "Persistent Volumes" },
+      { name: "StorageClasses" },
     ],
   },
   {
@@ -113,18 +164,18 @@ export const skillGroups: { title: string; items: Skill[] }[] = [
       { name: "Python", icon: SiPython, color: "#3776AB" },
       { name: "Bash", icon: SiGnubash, color: "#4EAA25" },
       { name: "YAML", icon: SiYaml, color: "#CB171E" },
+      { name: "Groovy" },
+      { name: "Rust", icon: SiRust, color: "#DEA584" },
       { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
       { name: "Go", icon: SiGo, color: "#00ADD8" },
     ],
   },
   {
-    title: "Networking & Security",
+    title: "Operating Systems",
     items: [
-      { name: "Nginx", icon: SiNginx, color: "#009639" },
-      { name: "HAProxy" },
-      { name: "TLS/SSL" },
-      { name: "Vault", icon: SiHashicorp, color: "#000000" },
-      { name: "DNS" }, { name: "Load Balancing" },
+      { name: "Linux", icon: SiLinux, color: "#FCC624" },
+      { name: "Ubuntu" }, { name: "Amazon Linux" }, { name: "Debian" },
+      { name: "Systemd" }, { name: "iptables" }, { name: "sysctl" }, { name: "eBPF" },
     ],
   },
   {
@@ -136,14 +187,6 @@ export const skillGroups: { title: string; items: Skill[] }[] = [
       { name: "LLM Tooling" },
     ],
   },
-  {
-    title: "OS",
-    items: [
-      { name: "Linux", icon: SiLinux, color: "#FCC624" },
-      { name: "Ubuntu" }, { name: "Amazon Linux" },
-      { name: "Systemd" },
-    ],
-  },
 ];
 
 export const experiences = [
@@ -153,30 +196,28 @@ export const experiences = [
     dates: "Feb 2026 — Present",
     tag: "current",
     bullets: [
-      "Owned end-to-end CI/CD setup in GitLab, managing pipelines, deployments, and release automation across multiple production services.",
-      "Provisioned and operated core data infrastructure including ClickHouse and Qdrant, handling end-to-end setup, tuning, and day-2 operations.",
-      "Executed zero-downtime Kubernetes cluster-to-cluster migrations and managed worker-node lifecycle, scaling, and cluster health.",
-      "Provisioned isolated virtual-machine partitions on Proxmox for every member of the company, enabling reproducible dev environments across the team.",
-      "Delivered production deployments for ezwallet, mybuildguide.com, and NoLimitNodes (nolimitnodes.com — live).",
-      "Built a company-wide Grafana dashboard covering the entire pipeline for unified observability across services and infrastructure.",
+      "Designed and owned end-to-end CI/CD on GitLab for NoLimitNodes (nolimitnodes.com) with fully isolated dev/test/prod environments, environment-scoped variables, protected branches, and manual production gates.",
+      "Built multi-stage GitLab pipelines (validate, build, test, deploy) using Docker-in-Docker runners and BuildKit registry-mode caching — cut single-service build times from ~10 min to under 2 min, hardened with masked secrets, namespace-scoped RBAC, image vulnerability scanning, and immutable commit-pinned tags.",
+      "Provisioned production ClickHouse and Qdrant data infrastructure using Ansible playbooks and reusable roles for idempotent installs, systemd service hardening, and post-install health verification.",
+      "Operated Apache Kafka pipelines (consumer-group lag tuning, partition strategy) and Redis + KVRocks clusters with master/read-replica configurations supporting ~12,800 ops/sec.",
+      "Set up Kubernetes worker nodes end-to-end on Hetzner and Proxmox-backed hosts via Rancher and Rancher Fleet (GitOps); tuned Linux/K8s nodes by resolving disk I/O contention, MTU mismatches under the Cilium VXLAN overlay, and rightsizing memory to eliminate OOM restarts.",
+      "Executed zero-downtime CNI migration on a production K8s cluster from Flannel to Cilium with eBPF kube-proxy replacement, scaling 119 Deployments + 13 StatefulSets in dependency order with full validation of pod networking, CoreDNS, and Traefik.",
+      "Built a company-wide Grafana dashboard suite covering K8s, GitLab, Kafka, ClickHouse, Qdrant, Redis, Proxmox, and Linux hosts — backed by Prometheus, Loki, Tempo, Alertmanager, and custom Python exporters for Kafka lag, ClickHouse freshness, and pipeline health.",
       "Leveraged Claude Code and prompt engineering to accelerate platform automation, runbook generation, and incident triage.",
     ],
   },
   {
     role: "DevOps Engineer",
     company: "Yebello Technology Pvt. Ltd.",
-    dates: "Sep 2025 — Feb 2026",
+    dates: "Mar 2025 — Feb 2026",
     bullets: [
-      "Designed and managed end-to-end CI/CD pipelines using GitLab CI, automating build, test, and deployment workflows across multiple production services.",
-    ],
-  },
-  {
-    role: "DevOps Intern",
-    company: "HighCatch Pvt. Ltd.",
-    dates: "Feb 2025 — Aug 2025",
-    bullets: [
-      "Automated deployment workflows using Jenkins and Docker, improving release frequency and workload visibility on AWS.",
-      "Built and maintained CI pipelines, container images, and monitoring hooks for internal services.",
+      "Sole owner of CI/CD, infrastructure, and release engineering for MyBuildGuide (mybuildguide.com, app.mybuildguide.com) — a 5-service application across dev/UAT/prod on a self-managed Kubernetes cluster.",
+      "Authored a multi-stage GitLab pipeline (detect-changes, build, validate, deploy) with per-service change detection — cut typical pipeline runtime by 60–80% for single-service edits.",
+      "Built and operated a Helm umbrella chart with per-environment values, atomic helm upgrades with --wait and timeout, PodDisruptionBudgets, readiness/liveness probes, and explicit resource requests/limits across every workload.",
+      "Architected an Alembic migration drift preflight gate that fails the pipeline within seconds with a ready-to-copy remediation command, replacing a silent multi-minute Helm rollback observed during a real production incident.",
+      "Wired Traefik ingress with cert-manager + Let's Encrypt for automatic TLS, Longhorn-backed PostgreSQL StatefulSets per service with Alembic migrations as Helm post-upgrade Jobs, and a pgAdmin deployment using a read-only Postgres role for safe developer DB introspection.",
+      "Owned platform-engineering delivery for multiple Propulse property-site projects — TVS Emerald Altura, TVS Emerald Auralis, and Puravankara Flow — standardizing GitLab CI/CD pipelines, container images, and release workflows so developers could ship without touching infra.",
+      "Acted as the platform engineer across teams via shared Helm charts, K8s manifests, base Docker images, runbooks, and routine kubectl debugging (logs, describe, exec, port-forward) — reducing deployment friction across services.",
     ],
   },
 ];
@@ -184,47 +225,47 @@ export const experiences = [
 export const projects = [
   {
     name: "NoLimitNodes",
-    stack: ["Kubernetes", "GitLab CI", "Proxmox", "Grafana"],
+    stack: ["Kubernetes", "GitLab CI", "Cilium", "Proxmox", "Grafana", "Hetzner"],
     description:
-      "Production deployment contribution at Spizen Technologies. Live at nolimitnodes.com — runs on infrastructure I provisioned and operate day-to-day.",
+      "Live production deployment owned end-to-end at Spizen Technologies. Fully isolated dev/test/prod GitLab environments, protected branches with manual production gates, running on a Hetzner + Proxmox-backed Kubernetes cluster after a zero-downtime Flannel → Cilium (eBPF) CNI migration.",
     metric: { value: "LIVE", label: "nolimitnodes.com" },
     link: "https://nolimitnodes.com",
   },
   {
     name: "MyBuildGuide CI/CD Platform",
-    stack: ["GitLab CI", "Kubernetes", "Helm", "Docker", "PostgreSQL", "Traefik", "Longhorn"],
+    stack: ["GitLab CI", "Kubernetes", "Helm", "Docker", "PostgreSQL", "Traefik", "Longhorn", "Alembic"],
     description:
-      "Sole owner of the end-to-end CI/CD platform for a 5-service stack (Flask backends, Expo/React frontend, admin, landing). Built a GitLab CI monorepo pipeline — 31 jobs across 4 stages with per-service change detection, umbrella Helm chart across dev/uat/prod on a self-managed Kubernetes cluster, atomic rollbacks, Alembic migration preflight, zero-downtime deploys. Live in production.",
+      "Sole owner of the end-to-end CI/CD platform for a 5-service stack (Flask backends, Expo/React frontend, admin, landing). GitLab monorepo pipeline with per-service change detection, umbrella Helm chart across dev/UAT/prod, atomic rollbacks, Alembic migration preflight, Traefik + cert-manager TLS, Longhorn-backed Postgres StatefulSets. Live in production.",
     metric: { value: "60–80%", label: "pipeline time cut per edit" },
     link: "https://mybuildguide.com",
   },
   {
     name: "Autonomous AIOps Gateway",
-    stack: ["Moltbot", "Linux", "Telegram API", "Systemd"],
+    stack: ["Python", "Linux", "Telegram API", "Systemd", "Nginx"],
     description:
-      "Self-healing infrastructure assistant that automates Linux server administration and service recovery. Custom AI Skills monitor Nginx logs and execute automated remediation via secure Systemd integrations, reducing MTTR through real-time alerting and remote shell execution via Telegram.",
+      "Self-healing infrastructure assistant — Linux server administration and service recovery triggered from a Telegram bot. Custom AI Skills monitor Nginx access/error logs in real time, classify anomalies, and execute remediation playbooks via least-privilege Systemd units. Role-based authorization, command audit logging, and least-privilege service configs prevent unauthorized actions.",
     metric: { value: "↓ MTTR", label: "real-time auto-remediation" },
   },
   {
     name: "Medicure, InsureMe & FinanceMe",
-    stack: ["Kubernetes", "Terraform", "AWS", "Jenkins", "Prometheus", "Grafana"],
+    stack: ["Kubernetes", "Terraform", "AWS", "Jenkins", "Ansible", "Prometheus", "Grafana"],
     description:
-      "Provisioned highly available AWS EKS/EC2 clusters using Terraform for Infrastructure as Code management. Automated environment provisioning with Ansible and Jenkins pipelines. Implemented a distributed Jenkins Master-Agent architecture plus a full-stack Prometheus + Grafana monitoring solution.",
-    metric: { value: "HA", label: "EKS + distributed CI" },
+      "Provisioned highly available AWS EKS/EC2 clusters across multiple AZs using Terraform modules for repeatable IaC management of networking, IAM, security groups, and worker node groups. Distributed Jenkins Master/Agent architecture for parallel pipeline execution, Docker Hub for image distribution, SonarQube for quality gates, and full-stack Prometheus + Grafana monitoring with Alertmanager routing.",
+    metric: { value: "Multi-AZ", label: "HA EKS + distributed CI" },
   },
   {
-    name: "Zomato-Clone App",
-    stack: ["SonarQube", "Jenkins", "Docker", "AWS"],
+    name: "Zomato Clone Application",
+    stack: ["SonarQube", "Jenkins", "Docker", "AWS", "Trivy", "Nexus"],
     description:
-      "Integrated SonarQube into Jenkins pipelines to enforce 80%+ code coverage and security gates for containerized deployments, acting as an automated QA gatekeeper on every merge.",
-    metric: { value: "80%+", label: "enforced coverage" },
+      "Full Jenkins CI/CD for a containerized full-stack web app — build, static analysis, security scanning, and deploy to AWS EC2. SonarQube enforces 80%+ code coverage; Trivy container vulnerability scanning + OWASP dependency checks block images with high/critical CVEs; Nexus Repository Manager handles build-artifact storage and Docker image promotion across environments with commit-pinned versioned releases.",
+    metric: { value: "80%+", label: "enforced coverage + CVE gate" },
   },
   {
-    name: "NIFTY Options Algo Trading",
-    stack: ["Python", "Playwright", "SQLite (WAL)", "Cron", "Linux VM", "Upstox API"],
+    name: "NSE Options Trading Bot",
+    stack: ["Rust", "Python", "AWS", "Docker", "Linux", "Systemd"],
     description:
-      "Autonomous data-capture + multi-strategy backtesting pipeline for Indian index options. Cron-driven daily loop: Playwright-automated OAuth/TOTP refresh → market-hours tick capture (~7.5k polls/day across 23 instruments) → post-market backtest — zero manual intervention. Includes a stdlib Black-Scholes engine, realistic Indian retail cost model (STT/slippage/brokerage/GST), and six A/B-comparable strategy variants.",
-    metric: { value: "99.97%", label: "pipeline uptime" },
+      "Automated NSE options trading bot deployed on AWS — custom VPC with public/private subnets, Internet Gateway, NAT routing, and Elastic IP for stable broker-API egress, on a low-latency EC2 instance hardened with broker-scoped security groups. Multi-module Rust signal engine + Python orchestrator, commit-pinned images in ECR, Systemd-managed service on EC2 with EBS-backed persistent state, IAM least-privilege, and AWS Systems Manager Parameter Store for secret management.",
+    metric: { value: "End-to-End", label: "AWS topology + Rust signal engine" },
     link: "https://github.com/shaurya9327/nse",
   },
 ];
