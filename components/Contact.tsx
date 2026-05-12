@@ -5,7 +5,7 @@ import Section from "./Section";
 import { profile } from "@/lib/data";
 
 const cards = [
-  { icon: FiMail, label: "Email", value: profile.email, href: `mailto:${profile.email}`, primary: true },
+  { icon: FiMail, label: "Email", value: profile.email, href: `mailto:${profile.email}` },
   { icon: FiPhone, label: "Call", value: profile.phone, href: `tel:${profile.phone.replace(/\s+/g, "")}` },
   { icon: FiGithub, label: "GitHub", value: "shaurya9327", href: profile.github },
   { icon: FiLinkedin, label: "LinkedIn", value: "shaurya-dandriyal", href: profile.linkedin },
@@ -36,21 +36,18 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: i * 0.06 }}
-                className={`group bd p-5 flex flex-col gap-2 hover:bd-accent transition ${
-                  c.primary ? "bg-accent text-bg" : "bg-bg text-fg"
-                }`}
+                className="group bd bg-bg p-5 flex flex-col gap-2 transition-colors duration-200 hover:bg-accent hover:border-accent"
               >
                 <div className="flex items-center justify-between">
-                  <Icon size={20} className={c.primary ? "text-bg" : "text-accent"} />
-                  <span className="text-[11px] uppercase tracking-widest opacity-70">
+                  <Icon
+                    size={20}
+                    className="text-accent group-hover:text-bg transition-colors"
+                  />
+                  <span className="text-[11px] uppercase tracking-widest text-muted group-hover:text-bg/70 transition-colors">
                     {c.label}
                   </span>
                 </div>
-                <span
-                  className={`text-sm md:text-base font-medium break-all ${
-                    c.primary ? "text-bg" : "text-fg"
-                  }`}
-                >
+                <span className="text-sm md:text-base font-medium break-all text-fg group-hover:text-bg transition-colors">
                   {c.value}
                 </span>
               </motion.a>
