@@ -17,17 +17,17 @@ const tiles: Face[][] = [
     { value: "13", label: "statefulsets in prod" },
     { value: "3 envs", label: "dev · uat · prod" },
   ],
-  // Platform engineering deliveries
+  // Data infrastructure provisioned
   [
-    { value: "5", label: "microservices shipped · MBG" },
-    { value: "3 sites", label: "propulse property delivery" },
-    { value: "Helm", label: "umbrella charts per env" },
+    { value: "ClickHouse", label: "servers provisioned · ansible" },
+    { value: "Qdrant", label: "vector store · prod-grade" },
+    { value: "Kafka", label: "pipelines · consumer-group tuned" },
   ],
-  // Reliability outcomes
+  // Observability suite built
   [
-    { value: "0", label: "downtime migrations" },
-    { value: "60–80%", label: "pipeline time cut" },
-    { value: "Atomic", label: "helm rollbacks" },
+    { value: "Grafana", label: "company-wide dashboard suite" },
+    { value: "P · L · T", label: "prometheus · loki · tempo" },
+    { value: "Custom", label: "python exporters · pipeline health" },
   ],
 ];
 

@@ -80,10 +80,11 @@ export default function Hero() {
           >
             I build and operate cloud-native infrastructure on{" "}
             <span className="text-fg">AWS</span>, <span className="text-fg">Hetzner</span>,
-            and <span className="text-fg">Kubernetes</span>. I own end-to-end CI/CD, run
-            ClickHouse, Qdrant, and Kafka at production scale, and ship the platform that
-            other teams deploy on — Helm umbrella charts, atomic rollbacks, and company-wide
-            Grafana observability across dev, UAT, and prod. Currently at{" "}
+            and <span className="text-fg">Kubernetes</span>. I own end-to-end CI/CD,
+            provisioned production <span className="text-fg">ClickHouse</span> and{" "}
+            <span className="text-fg">Qdrant</span> servers, run Kafka pipelines, and
+            built the <span className="text-fg">company-wide Grafana monitoring suite</span>{" "}
+            (Prometheus · Loki · Tempo · Alertmanager) over every internal tool. Currently at{" "}
             <span className="text-fg">Spizen Technologies</span>.
           </motion.p>
 
@@ -152,9 +153,9 @@ export default function Hero() {
           <div className="mt-4 text-muted text-[11px] leading-relaxed">
             <p><span className="text-accent">hostname</span> : spizen-prod-01</p>
             <p><span className="text-accent">kernel</span>   : 6.8.12-amd64</p>
-            <p><span className="text-accent">cni</span>      : cilium (eBPF)</p>
             <p><span className="text-accent">cloud</span>    : aws · hetzner · proxmox</p>
-            <p><span className="text-accent">services</span> : k8s · kafka · clickhouse</p>
+            <p><span className="text-accent">data</span>     : clickhouse · qdrant · kafka</p>
+            <p><span className="text-accent">monitor</span>  : grafana · loki · tempo</p>
             <p><span className="text-accent">status</span>   : <span className="text-fg">shipping</span></p>
           </div>
         </motion.div>

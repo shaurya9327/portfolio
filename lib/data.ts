@@ -225,9 +225,9 @@ export const experiences = [
 export const projects = [
   {
     name: "NoLimitNodes",
-    stack: ["Kubernetes", "GitLab CI", "Cilium", "Proxmox", "Grafana", "Hetzner"],
+    stack: ["Kubernetes", "GitLab CI", "Hetzner", "Proxmox", "Grafana", "Helm"],
     description:
-      "Live production deployment owned end-to-end at Spizen Technologies. Fully isolated dev/test/prod GitLab environments, protected branches with manual production gates, running on a Hetzner + Proxmox-backed Kubernetes cluster after a zero-downtime Flannel → Cilium (eBPF) CNI migration.",
+      "Live production deployment owned end-to-end at Spizen Technologies. Fully isolated dev/test/prod GitLab environments with protected branches and manual production gates, running on a Hetzner + Proxmox-backed Kubernetes cluster with Helm umbrella charts and company-wide Grafana observability.",
     metric: { value: "LIVE", label: "nolimitnodes.com" },
     link: "https://nolimitnodes.com",
   },
